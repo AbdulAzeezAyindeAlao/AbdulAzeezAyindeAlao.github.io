@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Portfolio</title>
+  <link rel="icon" href="data:," />
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -80,7 +81,7 @@
       33%  { border-radius: 55% 45% 40% 60% / 45% 55% 50% 50%; }
       66%  { border-radius: 45% 55% 60% 40% / 55% 45% 45% 55%; }
     }
-    .portrait-placeholder {
+    .portrait-placeholder { 
       position: absolute; inset: 20px;
       border-radius: 38% 58% 53% 43% / 48% 43% 53% 48%;
       display: flex; align-items: center; justify-content: center;
@@ -170,17 +171,24 @@
     .edu-extra + .edu-extra { margin-top: 1rem; }
     .edu-extra-title { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.85rem; }
     .cert-list { display: flex; flex-direction: column; gap: 0.6rem; }
-    .cert-item { display: flex; align-items: flex-start; gap: 0.7rem; }
+    .cert-item { display: flex; align-items: center; gap: 0.7rem; }
     .cert-icon { width: 28px; height: 28px; border-radius: 8px; background: var(--accent-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 13px; }
     .cert-name { font-size: 0.84rem; color: var(--dark); font-weight: 500; line-height: 1.35; }
     .cert-issuer { font-size: 0.76rem; color: var(--muted); }
     .cert-badge { display: inline-block; font-size: 0.67rem; font-weight: 500; color: var(--accent); background: var(--accent-light); padding: 0.1rem 0.45rem; border-radius: 100px; margin-left: 0.3rem; }
+    .cert-link { text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.7rem; flex: 1; }
+    .cert-link:hover .cert-name { color: var(--accent); }
+    .cert-link-icon { font-size: 0.68rem; color: var(--accent); opacity: 0; transition: opacity 0.2s; margin-left: auto; flex-shrink: 0; }
+    .cert-item:hover .cert-link-icon { opacity: 1; }
+    .cert-list-inner { margin-top: 0.5rem; }
     .extra-list { display: flex; flex-direction: column; gap: 0.5rem; }
+    .extra-list-inner { margin-top: 0.5rem; }
     .extra-item { display: flex; justify-content: space-between; align-items: baseline; }
     .extra-name { font-size: 0.85rem; color: var(--dark); font-weight: 500; }
     .extra-date { font-size: 0.76rem; color: var(--muted); white-space: nowrap; margin-left: 1rem; }
 
     /* ── PROJECTS ── */
+    .projects-section { background: #ede0cb; }
     .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
     .project-card {
       background: var(--warm-white); border: 1px solid var(--sand);
@@ -203,8 +211,8 @@
     .project-card:hover .project-link::after { transform: translateX(4px); }
 
     /* ── SKILLS ── */
-    .skills-section { background: var(--warm-white); }
-    .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 2rem; }
+    .skills-section { background: #F0E8DB; }
+    .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; width: 100%; }
     .skill-group {
       background: var(--cream); border: 1px solid var(--sand); border-radius: 18px; padding: 1.5rem;
       transition: transform 0.25s, box-shadow 0.25s;
@@ -241,6 +249,9 @@
     .fade-in { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
 
+    @media (max-width: 900px) {
+      .skills-grid { grid-template-columns: 1fr 1fr; }
+    }
     @media (max-width: 768px) {
       nav { padding: 1rem 1.5rem; }
       .nav-links { display: none; }
@@ -251,6 +262,7 @@
       section { padding: 4rem 1.5rem; }
       .exp-columns { grid-template-columns: 1fr; gap: 3rem; }
       .projects-grid { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: 1fr; }
       footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 1.5rem; }
     }
   </style>
@@ -307,7 +319,6 @@
     <div class="portrait-frame">
       <div class="portrait-bg"></div>
       <div class="portrait-placeholder">
-        <!-- Replace with: <img src="your-photo.jpg" style="width:100%;height:100%;object-fit:cover;" /> -->
         <span class="portrait-initials">AA</span>
       </div>
       <div class="portrait-badge">
@@ -324,7 +335,7 @@
   <div class="section-inner">
     <p class="section-label fade-in">Background</p>
     <h2 class="section-heading fade-in">Experience & Education</h2>
-    <p class="section-sub fade-in">Where I've learned, worked, and grown.</p>
+    <p class="section-sub fade-in">The places I've learned, worked, and grown.</p>
 
     <div class="exp-columns">
 
@@ -340,7 +351,7 @@
               <p class="tl-date">Incoming <span class="incoming-pill">Starting Soon</span></p>
               <h3 class="tl-title">IT Intern</h3>
               <p class="tl-org">Tailored Brands · Houston, TX</p>
-              <p class="tl-desc">Incoming IT Internship.</p>
+              <p class="tl-desc">Incoming IT Intern at Tailored Brands.</p>
               <div class="tl-tags">
                 <span class="tl-tag">IT Operations</span><span class="tl-tag">Internship</span>
               </div>
@@ -401,10 +412,12 @@
         </div>
       </div>
 
-      <!-- RIGHT: EDUCATION + CERTS + EXTRAS -->
+      <!-- RIGHT: EDUCATION + CERTS + EXTRAS — unified timeline -->
       <div class="fade-in">
         <p class="exp-col-label">Education</p>
         <div class="timeline">
+
+          <!-- Degree -->
           <div class="tl-item">
             <div class="tl-dot-col"><div class="tl-dot blue"></div><div class="tl-line"></div></div>
             <div class="tl-card">
@@ -421,45 +434,66 @@
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="edu-extra">
-          <p class="edu-extra-title">Certifications & Badges</p>
-          <div class="cert-list">
-            <div class="cert-item">
-              <div class="cert-icon">☁️</div>
-                <div><p class="cert-name">AWS Certified Cloud Practitioner</p><p class="cert-issuer">Amazon Web Services</p></div>
-            </div>
-            <div class="cert-item">
-              <div class="cert-icon">🏗️</div>
-              <div>
-                <p class="cert-name">AWS Certified Solutions Architect<span class="cert-badge">In Progress</span></p>
-                <p class="cert-issuer">Amazon Web Services</p>
+          <!-- Certifications -->
+          <div class="tl-item">
+            <div class="tl-dot-col"><div class="tl-dot blue"></div><div class="tl-line"></div></div>
+            <div class="tl-card">
+              <p class="tl-date blue">Certifications & Badges</p>
+              <div class="cert-list cert-list-inner">
+                <div class="cert-item">
+                  <a href="https://www.credly.com/badges/96c419c9-e13b-4667-8539-dfea067567fc/linked_in_profile" target="_blank" rel="noopener noreferrer" class="cert-link">
+                    <div class="cert-icon">☁️</div>
+                    <div><p class="cert-name">AWS Certified Cloud Practitioner</p><p class="cert-issuer">Amazon Web Services</p></div>
+                    <span class="cert-link-icon">↗</span>
+                  </a>
+                </div>
+                <div class="cert-item">
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="cert-link">
+                    <div class="cert-icon">🏗️</div>
+                    <div><p class="cert-name">AWS Certified Solutions Architect<span class="cert-badge">In Progress</span></p><p class="cert-issuer">Amazon Web Services</p></div>
+                    <span class="cert-link-icon">↗</span>
+                  </a>
+                </div>
+                <div class="cert-item">
+                  <a href="https://www.credly.com/badges/90a24c8f-29fd-47b3-a712-1e52abff3f9d" target="_blank" rel="noopener noreferrer" class="cert-link">
+                    <div class="cert-icon">🐍</div>
+                    <div><p class="cert-name">Scientific Programming in Python</p><p class="cert-issuer">Badge · Recent</p></div>
+                    <span class="cert-link-icon">↗</span>
+                  </a>
+                </div>
+                <div class="cert-item">
+                  <a href="https://secure.hpedsi.uh.edu/training/badges/badge.php?hash=db7e0ed8bf4634c47f87fdc1a980f88c1c536d56" target="_blank" rel="noopener noreferrer" class="cert-link">
+                    <div class="cert-icon">📊</div>
+                    <div><p class="cert-name">Data Analysis in R</p><p class="cert-issuer">HPE Data Science Institute</p></div>
+                    <span class="cert-link-icon">↗</span>
+                  </a>
+                </div>
+                <div class="cert-item">
+                  <a href="https://secure.hpedsi.uh.edu/training/badges/badge.php?hash=3399f8abc5c93879b15a3b9058d7803a1a8e7ac0" target="_blank" rel="noopener noreferrer" class="cert-link">
+                    <div class="cert-icon">💻</div>
+                    <div><p class="cert-name">Introduction to Cluster Computing</p><p class="cert-issuer">HPE Data Science Institute</p></div>
+                    <span class="cert-link-icon">↗</span>
+                  </a>
+                </div>
               </div>
             </div>
-            <div class="cert-item">
-              <div class="cert-icon">🐍</div>
-              <div><p class="cert-name">Scientific Programming in Python</p><p class="cert-issuer">Badge · Recent</p></div>
-            </div>
-            <div class="cert-item">
-              <div class="cert-icon">📊</div>
-              <div><p class="cert-name">Data Analysis in R</p><p class="cert-issuer">HPE Data Science Institute</p></div>
-            </div>
-            <div class="cert-item">
-              <div class="cert-icon">💻</div>
-              <div><p class="cert-name">Introduction to Cluster Computing</p><p class="cert-issuer">HPE Data Science Institute</p></div>
-            </div>
           </div>
-        </div>
 
-        <div class="edu-extra">
-          <p class="edu-extra-title">Extracurriculars & Honors</p>
-          <div class="extra-list">
-            <div class="extra-item"><span class="extra-name">Dean's List — Cullen College of Engineering</span><span class="extra-date">Fall 2023 – Present</span></div>
-            <div class="extra-item"><span class="extra-name">National Society of Black Engineers (NSBE)</span><span class="extra-date">Fall 2024 – Present</span></div>
-            <div class="extra-item"><span class="extra-name">Future Information Technology Professionals (FITP)</span><span class="extra-date">Spring 2026 – Present</span></div>
-            <div class="extra-item"><span class="extra-name">AWS Student Builder Group @ UH Officer (Content and Media Director)</span><span class="extra-date">Spring 2026 – Present</span></div>
+          <!-- Extracurriculars -->
+          <div class="tl-item">
+            <div class="tl-dot-col"><div class="tl-dot blue"></div><div class="tl-line"></div></div>
+            <div class="tl-card">
+              <p class="tl-date blue">Extracurriculars & Honors</p>
+              <div class="extra-list extra-list-inner">
+                <div class="extra-item"><span class="extra-name">Dean's List — Cullen College of Engineering</span><span class="extra-date">Fall 2023 – Present</span></div>
+                <div class="extra-item"><span class="extra-name">National Society of Black Engineers (NSBE)</span><span class="extra-date">Fall 2024 – Present</span></div>
+                <div class="extra-item"><span class="extra-name">Future Information Technology Professionals (FITP)</span><span class="extra-date">Spring 2026 – Present</span></div>
+                <div class="extra-item"><span class="extra-name">AWS Student Builder Group @ UH Officer (Content and Media Director)</span><span class="extra-date">Spring 2026 – Present</span></div>
+              </div>
+            </div>
           </div>
+
         </div>
       </div>
 
@@ -468,7 +502,7 @@
 </section>
 
 <!-- PROJECTS -->
-<section id="projects">
+<section class="projects-section" id="projects">
   <div class="section-inner">
     <p class="section-label fade-in">What I've built</p>
     <h2 class="section-heading fade-in">Projects</h2>
@@ -615,11 +649,19 @@
   // Nav active highlight
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
-  window.addEventListener('scroll', () => {
+  function updateNav() {
+    const scrollY = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const docHeight = document.documentElement.scrollHeight;
+    if (scrollY + windowHeight >= docHeight - 60) {
+      navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#contact'));
+      return;
+    }
     let cur = '';
-    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 130) cur = s.id; });
+    sections.forEach(s => { if (scrollY >= s.offsetTop - 160) cur = s.id; });
     navLinks.forEach(l => { l.classList.toggle('active', l.getAttribute('href') === `#${cur}`); });
-  });
+  }
+  window.addEventListener('scroll', updateNav);
 
   // Subtle tilt on experience cards
   document.querySelectorAll('.tl-card').forEach(card => {
