@@ -221,8 +221,6 @@
     .skill-group-title { font-family: 'Lora', serif; font-size: 1rem; color: var(--dark); margin-bottom: 1.1rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--sand); }
     .skill-item { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
     .skill-name { font-size: 0.85rem; color: var(--muted); }
-    .skill-bar { width: 80px; height: 3px; background: var(--sand); border-radius: 4px; overflow: hidden; }
-    .skill-fill { height: 100%; background: var(--accent); border-radius: 4px; transform: scaleX(0); transform-origin: left; transition: transform 1s ease; }
 
     /* ── CONTACT ── */
     .contact-section { background: var(--dark); text-align: center; }
@@ -582,33 +580,38 @@
     <div class="skills-grid">
       <div class="skill-group fade-in">
         <p class="skill-group-title">Programming & Frameworks</p>
-        <div class="skill-item"><span class="skill-name">Python</span><div class="skill-bar"><div class="skill-fill" data-w="0.95"></div></div></div>
-        <div class="skill-item"><span class="skill-name">TypeScript</span><div class="skill-bar"><div class="skill-fill" data-w="0.88"></div></div></div>
-        <div class="skill-item"><span class="skill-name">JavaScript / Node.js</span><div class="skill-bar"><div class="skill-fill" data-w="0.86"></div></div></div>
-        <div class="skill-item"><span class="skill-name">Next.js / React / Vue</span><div class="skill-bar"><div class="skill-fill" data-w="0.82"></div></div></div>
-        <div class="skill-item"><span class="skill-name">Express.js / Prisma ORM</span><div class="skill-bar"><div class="skill-fill" data-w="0.78"></div></div></div>
-        <div class="skill-item"><span class="skill-name">HTML / CSS</span><div class="skill-bar"><div class="skill-fill" data-w="0.84"></div></div></div>
-        <div class="skill-item"><span class="skill-name">SQL (MySQL, PostgreSQL) & NoSQL</span><div class="skill-bar"><div class="skill-fill" data-w="0.90"></div></div></div>
-        <div class="skill-item"><span class="skill-name">C++ / R / PowerShell</span><div class="skill-bar"><div class="skill-fill" data-w="0.70"></div></div></div>
-        <div class="skill-item"><span class="skill-name">Visual Studio Code</span><div class="skill-bar"><div class="skill-fill" data-w="0.92"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Python</span></div>
+        <div class="skill-item"><span class="skill-name">TypeScript</span></div>
+        <div class="skill-item"><span class="skill-name">JavaScript / Node.js</span></div>
+        <div class="skill-item"><span class="skill-name">Next.js / React / Vue</span></div>
+        <div class="skill-item"><span class="skill-name">Express.js</span></div>
+        <div class="skill-item"><span class="skill-name">Prisma ORM</span></div>
+        <div class="skill-item"><span class="skill-name">HTML / CSS</span></div>
+        <div class="skill-item"><span class="skill-name">SQL (MySQL, PostgreSQL) & NoSQL</span></div>
+        <div class="skill-item"><span class="skill-name">C++ / R / PowerShell</span></div>
+        <div class="skill-item"><span class="skill-name">Visual Studio Code</span></div>
       </div>
 
       <div class="skill-group fade-in">
         <p class="skill-group-title">Cloud Platforms & Tools</p>
-        <div class="skill-item"><span class="skill-name">AWS (EC2, RDS, Elastic Beanstalk, S3, IAM, VPC, CloudWatch)</span><div class="skill-bar"><div class="skill-fill" data-w="0.90"></div></div></div>
-        <div class="skill-item"><span class="skill-name">Google Cloud Platform</span><div class="skill-bar"><div class="skill-fill" data-w="0.78"></div></div></div>
-        <div class="skill-item"><span class="skill-name">Docker</span><div class="skill-bar"><div class="skill-fill" data-w="0.80"></div></div></div>
-        <div class="skill-item"><span class="skill-name">Linux / Windows Server</span><div class="skill-bar"><div class="skill-fill" data-w="0.76"></div></div></div>
-        <div class="skill-item"><span class="skill-name">Cloud Deployment / YAML</span><div class="skill-bar"><div class="skill-fill" data-w="0.75"></div></div></div>
+        <div class="skill-item"><span class="skill-name">AWS (EC2, RDS, Elastic Beanstalk, S3, IAM, VPC, CloudWatch)</span></div>
+        <div class="skill-item"><span class="skill-name">Google Cloud Platform</span></div>
+        <div class="skill-item"><span class="skill-name">Docker</span></div>
+        <div class="skill-item"><span class="skill-name">Linux</span></div>
+        <div class="skill-item"><span class="skill-name">Windows Server</span></div>
+        <div class="skill-item"><span class="skill-name">Cloud Deployment</span></div>
+        <div class="skill-item"><span class="skill-name">YAML</span></div>
       </div>
 
       <div class="skill-group fade-in">
         <p class="skill-group-title">DevOps, Identity & Tools</p>
-        <div class="skill-item"><span class="skill-name">Git / GitHub & GitHub Actions (CI/CD)</span><div class="skill-bar"><div class="skill-fill" data-w="0.90"></div></div></div>
-        <div class="skill-item"><span class="skill-name">Jira · Agile / Scrum</span><div class="skill-bar"><div class="skill-fill" data-w="0.80"></div></div></div>
-        <div class="skill-item"><span class="skill-name">Okta (OIDC) · Active Directory</span><div class="skill-bar"><div class="skill-fill" data-w="0.78"></div></div></div>
-        <div class="skill-item"><span class="skill-name">JWT / Session Management · REST API Integration</span><div class="skill-bar"><div class="skill-fill" data-w="0.80"></div></div></div>
-        <div class="skill-item"><span class="skill-name">Tableau · Power BI · Figma · Microsoft Office</span><div class="skill-bar"><div class="skill-fill" data-w="0.82"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Git / GitHub & GitHub Actions (CI/CD)</span></div>
+        <div class="skill-item"><span class="skill-name">Jira · Agile / Scrum</span></div>
+        <div class="skill-item"><span class="skill-name">Active Directory</span></div>
+        <div class="skill-item"><span class="skill-name">Okta (OIDC)</span></div>
+        <div class="skill-item"><span class="skill-name">JWT / Session Management</span></div>
+        <div class="skill-item"><span class="skill-name">REST API Integration</span></div>
+        <div class="skill-item"><span class="skill-name">Tableau · Power BI · Figma · Microsoft Office</span></div>
       </div>
     </div>
   </div>
@@ -621,7 +624,7 @@
   <div class="section-inner fade-in">
     <p class="section-label">Let's connect</p>
     <h2 class="section-heading">Open to <em>opportunities</em></h2>
-    <p class="contact-sub">Looking for internships, co-ops, or part-time roles in data analytics, cloud engineering, or full-stack development. Let's talk.</p>
+    <p class="contact-sub">I am interested in internships, co-ops, or part-time roles in data analytics, cloud engineering, or full-stack development. Let's talk.</p>
     <div class="contact-links">
       <a href="https://www.linkedin.com/in/abdul-azeez-ayinde/" class="contact-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       <a href="https://github.com/AbdulAzeezAyindeAlao" class="contact-link" target="_blank" rel="noopener noreferrer">GitHub</a>
